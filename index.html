@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreditLens — Applicant Intelligence Dashboard</title>
+    <meta name="description" content="Deep-dive analytics on 5,537 credit card applications revealing hidden patterns in income, gender equity, and financial access.">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&family=UnifrakturMaguntia&family=Special+Elite&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- HERO / NEWSPAPER HEADLINE -->
+    <section id="hero" class="hero">
+        <div class="hero-particles" id="particles"></div>
+        <div class="hero-content">
+            <div class="newspaper">
+                <div class="newspaper-header">
+                    <span class="np-date">INVESTIGATIVE DATA REPORT</span>
+                    <h1 class="np-title">THE DATA TIMES</h1>
+                    <span class="np-date">APRIL 2026</span>
+                </div>
+                <div class="np-divider"></div>
+                <h2 class="np-headline">"HIDDEN 20.4% GENDER PAY GAP EXPOSED IN CREDIT APPLICANT DATA"</h2>
+                <p class="np-sub">New analysis of 5,537 applications reveals systemic income disparity — women earn ₹46,000 less on average despite equal realty ownership. The <em>Wealth-Access Paradox</em> framework explains why.</p>
+                <div class="np-stats">
+                    <div class="np-stat"><span class="np-num">5,537</span><span class="np-label">Applicants Analyzed</span></div>
+                    <div class="np-stat"><span class="np-num">₹195K</span><span class="np-label">Avg. Income</span></div>
+                    <div class="np-stat"><span class="np-num">20.4%</span><span class="np-label">Gender Gap</span></div>
+                    <div class="np-stat"><span class="np-num">0.276</span><span class="np-label">Gini Index</span></div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span>Scroll to explore</span>
+                <div class="scroll-arrow"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NAVIGATION -->
+    <nav id="nav" class="nav">
+        <div class="nav-brand">
+            <span class="nav-logo">◈</span> CreditLens
+        </div>
+        <div class="nav-links">
+            <a href="#overview" class="nav-link active" data-section="overview">Overview</a>
+            <a href="#framework" class="nav-link" data-section="framework">Framework</a>
+            <a href="#gender" class="nav-link" data-section="gender">Gender Gap</a>
+            <a href="#income" class="nav-link" data-section="income">Income</a>
+            <a href="#demographics" class="nav-link" data-section="demographics">Demographics</a>
+            <a href="#occupations" class="nav-link" data-section="occupations">Occupations</a>
+            <a href="#predictions" class="nav-link" data-section="predictions">Predictions</a>
+            <a href="#ai-analyst" class="nav-link ai-nav" data-section="ai-analyst">🤖 AI Analyst</a>
+        </div>
+    </nav>
+
+    <!-- OVERVIEW SECTION -->
+    <section id="overview" class="section">
+        <div class="section-header">
+            <span class="section-tag">01 — OVERVIEW</span>
+            <h2 class="section-title">The Big Picture</h2>
+            <p class="section-desc">A bird's-eye view of 5,537 credit card applicants — who they are, what they earn, and what they own.</p>
+        </div>
+        <div class="kpi-grid" id="kpi-grid">
+            <!-- KPIs injected by JS -->
+        </div>
+        <div class="chart-row">
+            <div class="chart-card" id="chart-income-dist">
+                <div class="chart-header">
+                    <h3>Income Distribution</h3>
+                    <span class="chart-badge">Right-Skewed</span>
+                </div>
+                <canvas id="incomeDistChart"></canvas>
+                <p class="chart-insight">💡 80% of applicants earn between ₹100K–₹300K. The long tail reveals a small elite earning 5–7× the median.</p>
+            </div>
+            <div class="chart-card" id="chart-age-dist">
+                <div class="chart-header">
+                    <h3>Age Distribution</h3>
+                    <span class="chart-badge">Bimodal</span>
+                </div>
+                <canvas id="ageDistChart"></canvas>
+                <p class="chart-insight">💡 Two peaks emerge: young professionals (28–35) and pre-retirement applicants (50–58), creating the <strong>Dual-Cohort Pattern</strong>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FRAMEWORK SECTION -->
+    <section id="framework" class="section section-dark">
+        <div class="section-header">
+            <span class="section-tag">02 — THE FRAMEWORK</span>
+            <h2 class="section-title">The Wealth-Access Paradox</h2>
+            <p class="section-desc">A proprietary framework revealing why equal asset ownership doesn't translate to equal financial access.</p>
+        </div>
+        <div class="framework-visual">
+            <div class="framework-card">
+                <div class="fw-icon">🏠</div>
+                <h4>Equal Realty Ownership</h4>
+                <div class="fw-bar-row">
+                    <span>Men: 72.4%</span>
+                    <div class="fw-bar"><div class="fw-fill" style="width:72.4%"></div></div>
+                </div>
+                <div class="fw-bar-row">
+                    <span>Women: 73.5%</span>
+                    <div class="fw-bar"><div class="fw-fill fw-fill-f" style="width:73.5%"></div></div>
+                </div>
+                <p class="fw-label">✅ Near Parity</p>
+            </div>
+            <div class="framework-arrow">→</div>
+            <div class="framework-card">
+                <div class="fw-icon">💰</div>
+                <h4>But Unequal Income</h4>
+                <div class="fw-bar-row">
+                    <span>Men: ₹226K</span>
+                    <div class="fw-bar"><div class="fw-fill" style="width:100%"></div></div>
+                </div>
+                <div class="fw-bar-row">
+                    <span>Women: ₹180K</span>
+                    <div class="fw-bar"><div class="fw-fill fw-fill-f" style="width:79.6%"></div></div>
+                </div>
+                <p class="fw-label">⚠️ 20.4% Gap</p>
+            </div>
+            <div class="framework-arrow">→</div>
+            <div class="framework-card">
+                <div class="fw-icon">🚗</div>
+                <h4>And Unequal Mobility</h4>
+                <div class="fw-bar-row">
+                    <span>Men Cars: 66.1%</span>
+                    <div class="fw-bar"><div class="fw-fill" style="width:66.1%"></div></div>
+                </div>
+                <div class="fw-bar-row">
+                    <span>Women Cars: 26.7%</span>
+                    <div class="fw-bar"><div class="fw-fill fw-fill-f" style="width:26.7%"></div></div>
+                </div>
+                <p class="fw-label">🔴 2.5× Gap</p>
+            </div>
+        </div>
+        <div class="framework-conclusion">
+            <div class="fw-conclusion-box">
+                <h3>🔬 The Paradox Explained</h3>
+                <p>Women own homes at the <strong>same rate</strong> as men — but earn <strong>20% less</strong> and own cars at <strong>2.5× lower rates</strong>. This reveals that <em>realty ownership is often inherited or shared</em>, while income and vehicle ownership reflect <em>individual economic agency</em>. Credit scoring that weights realty ownership equally may mask deep financial vulnerability.</p>
+                <div class="why-drill">
+                    <h4>The 5-Why Drill</h4>
+                    <div class="why-step"><span class="why-num">1</span> Why do women earn less? → Concentrated in lower-paying occupations</div>
+                    <div class="why-step"><span class="why-num">2</span> Why those occupations? → Education pipeline (69% secondary-only)</div>
+                    <div class="why-step"><span class="why-num">3</span> Why less education access? → Family responsibilities (higher child-care burden)</div>
+                    <div class="why-step"><span class="why-num">4</span> Why isn't realty wealth offsetting? → Realty is household-level, income is individual</div>
+                    <div class="why-step"><span class="why-num">5</span> Why does this matter for credit? → <strong>Risk models using household assets overestimate women's individual creditworthiness</strong></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GENDER GAP SECTION -->
+    <section id="gender" class="section">
+        <div class="section-header">
+            <span class="section-tag">03 — GENDER ANALYSIS</span>
+            <h2 class="section-title">The 20.4% Gap — Dissected</h2>
+            <p class="section-desc">Statistical significance: p = 4.86 × 10⁻⁴⁷. This is not noise — it's structural.</p>
+        </div>
+        <div class="chart-row">
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h3>Income by Gender & Age</h3>
+                    <span class="chart-badge">Divergence Pattern</span>
+                </div>
+                <canvas id="genderAgeChart"></canvas>
+                <p class="chart-insight">💡 The gap <strong>widens with age</strong> — young men and women start closer, but diverge sharply after 35. Peak male earning (40–50) is ₹237K vs female ₹189K.</p>
+            </div>
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h3>Gender × Education Income</h3>
+                    <span class="chart-badge">Education Premium</span>
+                </div>
+                <canvas id="genderEduChart"></canvas>
+                <p class="chart-insight">💡 Higher education gives men a ₹79K boost but women only ₹52K — the <strong>education return gap</strong> is 34%.</p>
+            </div>
+        </div>
+        <div class="chart-row">
+            <div class="chart-card full-width">
+                <div class="chart-header">
+                    <h3>Occupation Income — Gender Comparison</h3>
+                    <span class="chart-badge interactive-badge" id="occ-sort-btn">Click to sort</span>
+                </div>
+                <canvas id="occGenderChart"></canvas>
+                <p class="chart-insight">💡 In <strong>every single occupation</strong>, men out-earn women. The gap is largest in management (₹80K+) and smallest in cooking staff.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- INCOME SECTION -->
+    <section id="income" class="section section-dark">
+        <div class="section-header">
+            <span class="section-tag">04 — INCOME DEEP DIVE</span>
+            <h2 class="section-title">Follow the Money</h2>
+            <p class="section-desc">Income patterns across education, employment type, experience, and asset ownership.</p>
+        </div>
+        <div class="chart-row">
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h3>Education → Income Pipeline</h3>
+                </div>
+                <canvas id="eduIncomeChart"></canvas>
+            </div>
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h3>Income by Employment Type</h3>
+                </div>
+                <canvas id="incTypeChart"></canvas>
+            </div>
+        </div>
+        <div class="chart-row">
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h3>Asset Score → Income Ladder</h3>
+                    <span class="chart-badge">Strong Correlation</span>
+                </div>
+                <canvas id="assetChart"></canvas>
+                <p class="chart-insight">💡 Each additional asset (car/realty) correlates with ~₹30K higher income. Asset Score 2 earns 37% more than Score 0.</p>
+            </div>
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h3>Housing Type → Income</h3>
+                </div>
+                <canvas id="housingChart"></canvas>
+                <p class="chart-insight">💡 Office apartment dwellers earn ₹359K — nearly 2× the average. "With parents" group shows financial dependency.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEMOGRAPHICS SECTION -->
+    <section id="demographics" class="section">
+        <div class="section-header">
+            <span class="section-tag">05 — DEMOGRAPHICS</span>
+            <h2 class="section-title">Who Are These Applicants?</h2>
+            <p class="section-desc">Family structure, children, and their impact on economic outcomes.</p>
+        </div>
+        <div class="chart-row">
+            <div class="chart-card">
+                <div class="chart-header"><h3>Family Status Distribution</h3></div>
+                <canvas id="familyChart"></canvas>
+            </div>
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h3>Children Count → Income Impact</h3>
+                    <span class="chart-badge">The Parenthood Penalty</span>
+                </div>
+                <canvas id="childrenChart"></canvas>
+                <p class="chart-insight">💡 Each additional child beyond 1 correlates with ~₹20K lower income — except outlier families with 4 children (only 2 cases). This is the <strong>Parenthood Penalty</strong>.</p>
+            </div>
+        </div>
+        <div class="chart-row">
+            <div class="chart-card">
+                <div class="chart-header"><h3>Experience → Income (Non-Pensioners)</h3></div>
+                <canvas id="expChart"></canvas>
+            </div>
+            <div class="chart-card">
+                <div class="chart-header"><h3>Correlation Heatmap</h3></div>
+                <canvas id="corrChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- OCCUPATIONS SECTION -->
+    <section id="occupations" class="section section-dark">
+        <div class="section-header">
+            <span class="section-tag">06 — OCCUPATIONS</span>
+            <h2 class="section-title">The Career Hierarchy</h2>
+            <p class="section-desc">18 occupation types ranked by income — revealing a 2.5× spread from bottom to top.</p>
+        </div>
+        <div class="chart-row">
+            <div class="chart-card full-width">
+                <div class="chart-header">
+                    <h3>Occupation Ranking — Mean Income</h3>
+                    <div class="chart-controls">
+                        <button class="ctrl-btn active" data-metric="mean">Mean</button>
+                        <button class="ctrl-btn" data-metric="median">Median</button>
+                    </div>
+                </div>
+                <canvas id="occRankChart" height="500"></canvas>
+            </div>
+        </div>
+        <div class="occ-insight-box">
+            <h3>🎯 Key Finding: The Occupation Trap</h3>
+            <p>30% of occupation data is <strong>missing</strong> — predominantly among lower-income, less-educated applicants. This isn't random. It reveals a <em>structural invisibility</em> where the most financially vulnerable are also the least documented. Any credit model trained on this data will <strong>systematically underserve</strong> these applicants.</p>
+        </div>
+    </section>
+
+    <!-- PREDICTIONS SECTION -->
+    <section id="predictions" class="section">
+        <div class="section-header">
+            <span class="section-tag">07 — PREDICTIVE MODEL</span>
+            <h2 class="section-title">What Happens Next?</h2>
+            <p class="section-desc">Linear regression model predicting income from demographic features — with confidence intervals.</p>
+        </div>
+        <div class="prediction-panel">
+            <div class="pred-form">
+                <h3>🔮 Income Predictor</h3>
+                <p>Adjust parameters to predict an applicant's income:</p>
+                <div class="pred-inputs">
+                    <div class="pred-field">
+                        <label>Gender</label>
+                        <select id="pred-gender"><option value="M">Male</option><option value="F">Female</option></select>
+                    </div>
+                    <div class="pred-field">
+                        <label>Age</label>
+                        <input type="range" id="pred-age" min="20" max="68" value="35"><span id="pred-age-val">35</span>
+                    </div>
+                    <div class="pred-field">
+                        <label>Education</label>
+                        <select id="pred-edu">
+                            <option value="lower">Lower Secondary</option>
+                            <option value="secondary" selected>Secondary</option>
+                            <option value="incomplete">Incomplete Higher</option>
+                            <option value="higher">Higher Education</option>
+                        </select>
+                    </div>
+                    <div class="pred-field">
+                        <label>Owns Car</label>
+                        <select id="pred-car"><option value="0">No</option><option value="1">Yes</option></select>
+                    </div>
+                    <div class="pred-field">
+                        <label>Owns Realty</label>
+                        <select id="pred-realty"><option value="1" selected>Yes</option><option value="0">No</option></select>
+                    </div>
+                    <div class="pred-field">
+                        <label>Children</label>
+                        <input type="range" id="pred-children" min="0" max="4" value="1"><span id="pred-children-val">1</span>
+                    </div>
+                </div>
+                <button id="pred-btn" class="pred-button">Predict Income →</button>
+            </div>
+            <div class="pred-result" id="pred-result">
+                <div class="pred-amount" id="pred-amount">₹—</div>
+                <div class="pred-ci" id="pred-ci">Confidence Interval: —</div>
+                <div class="pred-percentile" id="pred-percentile">Percentile: —</div>
+                <canvas id="predGaugeChart" width="300" height="200"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI CO-ANALYST -->
+    <section id="ai-analyst" class="section section-dark">
+        <div class="section-header">
+            <span class="section-tag">08 — AI CO-ANALYST</span>
+            <h2 class="section-title">Your McKinsey Partner</h2>
+            <p class="section-desc">Select a persona and a topic. The AI analyzes your actual dataset and returns boardroom-grade insights — live, in seconds.</p>
+        </div>
+
+        <!-- API KEY SETUP -->
+        <div class="ai-setup" id="ai-setup">
+            <div class="ai-setup-inner">
+                <div class="ai-key-row">
+                    <div class="ai-key-group">
+                        <label>AI Provider</label>
+                        <select id="ai-provider">
+                            <option value="gemini">Google Gemini (Free)</option>
+                            <option value="openai">OpenAI GPT-4</option>
+                        </select>
+                    </div>
+                    <div class="ai-key-group" style="flex:2">
+                        <label>API Key <span class="key-hint">(stored locally, never sent anywhere except the AI provider)</span></label>
+                        <div class="key-input-row">
+                            <input type="password" id="ai-api-key" placeholder="Paste your API key here...">
+                            <button id="ai-key-save" class="key-save-btn">Connect →</button>
+                        </div>
+                    </div>
+                </div>
+                <p class="ai-key-note">🔑 Get a free Gemini key at <a href="https://aistudio.google.com/app/apikey" target="_blank">aistudio.google.com</a> — no credit card needed.</p>
+            </div>
+        </div>
+
+        <!-- MAIN AI PANEL -->
+        <div class="ai-panel" id="ai-panel">
+            <!-- LEFT: CONTROLS -->
+            <div class="ai-controls">
+                <div class="ai-section-label">Choose a Persona</div>
+                <div class="persona-grid" id="persona-grid">
+                    <button class="persona-btn active" data-persona="mckinsey">
+                        <span class="persona-icon">🏢</span>
+                        <span class="persona-name">McKinsey Consultant</span>
+                        <span class="persona-desc">Strategic, framework-driven, ROI-focused</span>
+                    </button>
+                    <button class="persona-btn" data-persona="risk">
+                        <span class="persona-icon">⚠️</span>
+                        <span class="persona-name">Chief Risk Officer</span>
+                        <span class="persona-desc">Conservative, stress-tests everything</span>
+                    </button>
+                    <button class="persona-btn" data-persona="sociologist">
+                        <span class="persona-icon">🌍</span>
+                        <span class="persona-name">Sociologist</span>
+                        <span class="persona-desc">Equity-focused, systemic thinking</span>
+                    </button>
+                    <button class="persona-btn" data-persona="devil">
+                        <span class="persona-icon">😈</span>
+                        <span class="persona-name">Devil's Advocate</span>
+                        <span class="persona-desc">Challenges every assumption aggressively</span>
+                    </button>
+                </div>
+
+                <div class="ai-section-label" style="margin-top:1.5rem">Choose a Topic</div>
+                <div class="topic-list" id="topic-list">
+                    <button class="topic-btn active" data-topic="gender_gap">The 20.4% Gender Pay Gap</button>
+                    <button class="topic-btn" data-topic="occupation_trap">The Occupation Data Gap (30% Missing)</button>
+                    <button class="topic-btn" data-topic="wealth_paradox">The Wealth-Access Paradox</button>
+                    <button class="topic-btn" data-topic="parenthood_penalty">The Parenthood Penalty</button>
+                    <button class="topic-btn" data-topic="dual_cohort">The Dual-Cohort Age Pattern</button>
+                    <button class="topic-btn" data-topic="edu_premium">Education Return Gap (34%)</button>
+                    <button class="topic-btn" data-topic="income_inequality">Income Inequality (Gini 0.276)</button>
+                    <button class="topic-btn" data-topic="full">Full Dataset Executive Brief</button>
+                </div>
+
+                <button class="ai-generate-btn" id="ai-generate-btn">
+                    <span id="ai-btn-text">⚡ Generate AI Insight</span>
+                </button>
+            </div>
+
+            <!-- RIGHT: OUTPUT -->
+            <div class="ai-output">
+                <div class="ai-output-header">
+                    <div id="ai-persona-label" class="ai-persona-label">🏢 McKinsey Consultant</div>
+                    <div id="ai-topic-label" class="ai-topic-label">The 20.4% Gender Pay Gap</div>
+                </div>
+                <div class="ai-response-box" id="ai-response-box">
+                    <div class="ai-placeholder">
+                        <div class="ai-placeholder-icon">🤖</div>
+                        <p>Connect your API key and hit <strong>Generate AI Insight</strong> to get boardroom-grade analysis of your dataset — from the persona of your choice.</p>
+                    </div>
+                </div>
+                <div class="ai-meta" id="ai-meta"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RECOMMENDATIONS -->
+    <section id="recommendations" class="section">
+        <div class="section-header">
+            <span class="section-tag">09 — RECOMMENDATIONS</span>
+            <h2 class="section-title">Policy Recommendations</h2>
+        </div>
+        <div class="rec-grid">
+            <div class="rec-card">
+                <div class="rec-num">01</div>
+                <h4>Gender-Aware Credit Scoring</h4>
+                <p>Current models may systematically disadvantage women by weighting income heavily. Incorporate <strong>income-to-asset ratio</strong> instead of raw income to level the playing field.</p>
+            </div>
+            <div class="rec-card">
+                <div class="rec-num">02</div>
+                <h4>Occupation Data Mandate</h4>
+                <p>30% missing occupation data creates blind spots. Mandate occupation field collection — the missing data correlates with <strong>lower income brackets</strong>, biasing risk models.</p>
+            </div>
+            <div class="rec-card">
+                <div class="rec-num">03</div>
+                <h4>Age-Adjusted Products</h4>
+                <p>The Dual-Cohort pattern (peaks at 30s and 50s) suggests two distinct product lines: <strong>growth-oriented</strong> for young professionals and <strong>stability-focused</strong> for pre-retirees.</p>
+            </div>
+            <div class="rec-card">
+                <div class="rec-num">04</div>
+                <h4>Education-Income Pipeline</h4>
+                <p>The 34% education return gap between genders suggests systemic barriers. Financial products should account for <strong>income trajectory potential</strong>, not just current earnings.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">◈ CreditLens Analytics</div>
+            <p>Analysis of 5,537 credit card applications. Framework: <em>The Wealth-Access Paradox</em>.</p>
+            <p class="footer-methodology">Methodology: Pearson correlation, Welch's t-test (p < 0.001), Gini coefficient, multi-variate linear regression. Built with Chart.js.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script src="ai_engine.js"></script>
+</body>
+</html>

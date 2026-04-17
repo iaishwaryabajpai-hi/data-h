@@ -1,0 +1,659 @@
+{
+  "overview": {
+    "total_applicants": 5537,
+    "avg_income": 195277,
+    "median_income": 180000,
+    "avg_age": 43.6,
+    "female_pct": 67.0,
+    "car_ownership_pct": 39.7,
+    "realty_ownership_pct": 73.1,
+    "gini": 0.2764,
+    "gender_gap_pct": 20.4,
+    "occupation_missing_pct": 29.9
+  },
+  "gender": {
+    "counts": {
+      "F": 3711,
+      "M": 1826
+    },
+    "income": {
+      "F": 180057,
+      "M": 226209
+    },
+    "income_median": {
+      "F": 157500,
+      "M": 202500
+    },
+    "car_ownership": {
+      "M": 66.1,
+      "F": 26.7
+    },
+    "realty_ownership": {
+      "M": 72.4,
+      "F": 73.5
+    }
+  },
+  "age_distribution": {
+    "20": 1,
+    "21": 2,
+    "22": 14,
+    "23": 51,
+    "24": 42,
+    "25": 43,
+    "26": 62,
+    "27": 192,
+    "28": 142,
+    "29": 145,
+    "30": 126,
+    "31": 115,
+    "32": 213,
+    "33": 156,
+    "34": 162,
+    "35": 173,
+    "36": 131,
+    "37": 176,
+    "38": 222,
+    "39": 121,
+    "40": 152,
+    "41": 189,
+    "42": 199,
+    "43": 140,
+    "44": 93,
+    "45": 104,
+    "46": 165,
+    "47": 111,
+    "48": 143,
+    "49": 80,
+    "50": 99,
+    "51": 152,
+    "52": 135,
+    "53": 71,
+    "54": 133,
+    "55": 125,
+    "56": 119,
+    "57": 151,
+    "58": 131,
+    "59": 149,
+    "60": 161,
+    "61": 49,
+    "62": 135,
+    "63": 82,
+    "64": 98,
+    "65": 51,
+    "66": 17,
+    "67": 11,
+    "68": 3
+  },
+  "age_brackets": {
+    "20-30": {
+      "mean": 186351,
+      "median": 157500,
+      "count": 819
+    },
+    "30-40": {
+      "mean": 206252,
+      "median": 180000,
+      "count": 1621
+    },
+    "40-50": {
+      "mean": 209253,
+      "median": 180000,
+      "count": 1323
+    },
+    "50-60": {
+      "mean": 182683,
+      "median": 166500,
+      "count": 1327
+    },
+    "60-70": {
+      "mean": 167975,
+      "median": 153000,
+      "count": 446
+    }
+  },
+  "income_distribution": {
+    "0-50K": 51,
+    "50-100K": 691,
+    "100-150K": 1421,
+    "150-200K": 1106,
+    "200-250K": 1088,
+    "250-300K": 532,
+    "300-400K": 396,
+    "400-500K": 116,
+    "500-750K": 118,
+    "750K-1M": 11,
+    "1M+": 7
+  },
+  "education": {
+    "Academic degree": {
+      "mean": 135000,
+      "median": 135000,
+      "count": 3
+    },
+    "Higher education": {
+      "mean": 236847,
+      "median": 202500,
+      "count": 1388
+    },
+    "Incomplete higher": {
+      "mean": 231398,
+      "median": 202500,
+      "count": 266
+    },
+    "Lower secondary": {
+      "mean": 126495,
+      "median": 123750,
+      "count": 50
+    },
+    "Secondary / secondary special": {
+      "mean": 178648,
+      "median": 157500,
+      "count": 3830
+    }
+  },
+  "family_status": {
+    "Civil marriage": {
+      "mean": 198193,
+      "median": 180000,
+      "count": 465
+    },
+    "Married": {
+      "mean": 195426,
+      "median": 162000,
+      "count": 3797
+    },
+    "Separated": {
+      "mean": 201869,
+      "median": 180000,
+      "count": 346
+    },
+    "Single / not married": {
+      "mean": 196655,
+      "median": 180000,
+      "count": 678
+    },
+    "Widow": {
+      "mean": 174807,
+      "median": 180000,
+      "count": 251
+    }
+  },
+  "occupation": {
+    "Managers": {
+      "mean": 308468,
+      "median": 270000,
+      "count": 463
+    },
+    "Realty agents": {
+      "mean": 296156,
+      "median": 328500,
+      "count": 16
+    },
+    "HR staff": {
+      "mean": 213468,
+      "median": 180000,
+      "count": 16
+    },
+    "Private service staff": {
+      "mean": 210250,
+      "median": 225000,
+      "count": 54
+    },
+    "Accountants": {
+      "mean": 207364,
+      "median": 202500,
+      "count": 173
+    },
+    "Laborers": {
+      "mean": 202778,
+      "median": 198000,
+      "count": 929
+    },
+    "Drivers": {
+      "mean": 202380,
+      "median": 180000,
+      "count": 338
+    },
+    "High skill tech staff": {
+      "mean": 190472,
+      "median": 157500,
+      "count": 220
+    },
+    "IT staff": {
+      "mean": 189843,
+      "median": 202500,
+      "count": 16
+    },
+    "Security staff": {
+      "mean": 186970,
+      "median": 180000,
+      "count": 102
+    },
+    "Core staff": {
+      "mean": 186702,
+      "median": 180000,
+      "count": 519
+    },
+    "Low-skill Laborers": {
+      "mean": 186428,
+      "median": 135000,
+      "count": 21
+    },
+    "Secretaries": {
+      "mean": 172500,
+      "median": 144000,
+      "count": 27
+    },
+    "Sales staff": {
+      "mean": 172340,
+      "median": 157500,
+      "count": 601
+    },
+    "Medicine staff": {
+      "mean": 160182,
+      "median": 135000,
+      "count": 156
+    },
+    "Waiters/barmen staff": {
+      "mean": 152500,
+      "median": 157500,
+      "count": 9
+    },
+    "Cleaning staff": {
+      "mean": 145425,
+      "median": 135000,
+      "count": 77
+    },
+    "Cooking staff": {
+      "mean": 124174,
+      "median": 135000,
+      "count": 143
+    }
+  },
+  "housing": {
+    "Office apartment": {
+      "mean": 359325,
+      "median": 450000,
+      "count": 20
+    },
+    "Rented apartment": {
+      "mean": 231883,
+      "median": 247500,
+      "count": 125
+    },
+    "Municipal apartment": {
+      "mean": 218461,
+      "median": 157500,
+      "count": 162
+    },
+    "House / apartment": {
+      "mean": 193873,
+      "median": 180000,
+      "count": 4947
+    },
+    "Co-op apartment": {
+      "mean": 191571,
+      "median": 229500,
+      "count": 14
+    },
+    "With parents": {
+      "mean": 178109,
+      "median": 157500,
+      "count": 269
+    }
+  },
+  "income_type": {
+    "Commercial associate": {
+      "mean": 234061,
+      "median": 202500,
+      "count": 1362
+    },
+    "Pensioner": {
+      "mean": 157963,
+      "median": 135000,
+      "count": 977
+    },
+    "State servant": {
+      "mean": 215474,
+      "median": 202500,
+      "count": 368
+    },
+    "Student": {
+      "mean": 171000,
+      "median": 171000,
+      "count": 8
+    },
+    "Working": {
+      "mean": 186912,
+      "median": 157500,
+      "count": 2822
+    }
+  },
+  "gender_education": {
+    "F": {
+      "Academic degree": 135000,
+      "Higher education": 213162,
+      "Incomplete higher": 178618,
+      "Lower secondary": 117145,
+      "Secondary / secondary special": 167954
+    },
+    "M": {
+      "Higher education": 296390,
+      "Incomplete higher": 309827,
+      "Lower secondary": 141750,
+      "Secondary / secondary special": 199340
+    }
+  },
+  "asset_score": {
+    "0": {
+      "mean": 165713,
+      "median": 157500,
+      "count": 931
+    },
+    "1": {
+      "mean": 187121,
+      "median": 157500,
+      "count": 2963
+    },
+    "2": {
+      "mean": 226737,
+      "median": 202500,
+      "count": 1643
+    }
+  },
+  "children": {
+    "0": {
+      "mean": 194136,
+      "median": 180000,
+      "count": 3862
+    },
+    "1": {
+      "mean": 204564,
+      "median": 166500,
+      "count": 1178
+    },
+    "2": {
+      "mean": 183704,
+      "median": 157500,
+      "count": 441
+    },
+    "3": {
+      "mean": 165166,
+      "median": 135000,
+      "count": 54
+    },
+    "4": {
+      "mean": 292500,
+      "median": 292500,
+      "count": 2
+    }
+  },
+  "age_income_M": {
+    "20-30": 207750,
+    "30-40": 252398,
+    "40-50": 247157,
+    "50-60": 197583,
+    "60-70": 159839
+  },
+  "age_income_F": {
+    "20-30": 163827,
+    "30-40": 181225,
+    "40-50": 191561,
+    "50-60": 178218,
+    "60-70": 170607
+  },
+  "correlation": {
+    "AMT_INCOME_TOTAL": {
+      "AMT_INCOME_TOTAL": 1.0,
+      "AGE": -0.0575,
+      "YEARS_EMPLOYED": 0.0478,
+      "CNT_CHILDREN": -0.0079,
+      "CNT_FAM_MEMBERS": -0.0027,
+      "ASSET_SCORE": 0.1889,
+      "DIGITAL_SCORE": 0.0264
+    },
+    "AGE": {
+      "AMT_INCOME_TOTAL": -0.0575,
+      "AGE": 1.0,
+      "YEARS_EMPLOYED": -0.0611,
+      "CNT_CHILDREN": -0.3444,
+      "CNT_FAM_MEMBERS": -0.2696,
+      "ASSET_SCORE": -0.0137,
+      "DIGITAL_SCORE": -0.0762
+    },
+    "YEARS_EMPLOYED": {
+      "AMT_INCOME_TOTAL": 0.0478,
+      "AGE": -0.0611,
+      "YEARS_EMPLOYED": 1.0,
+      "CNT_CHILDREN": 0.0356,
+      "CNT_FAM_MEMBERS": 0.0198,
+      "ASSET_SCORE": -0.0687,
+      "DIGITAL_SCORE": 0.1215
+    },
+    "CNT_CHILDREN": {
+      "AMT_INCOME_TOTAL": -0.0079,
+      "AGE": -0.3444,
+      "YEARS_EMPLOYED": 0.0356,
+      "CNT_CHILDREN": 1.0,
+      "CNT_FAM_MEMBERS": 0.8739,
+      "ASSET_SCORE": 0.1373,
+      "DIGITAL_SCORE": -0.039
+    },
+    "CNT_FAM_MEMBERS": {
+      "AMT_INCOME_TOTAL": -0.0027,
+      "AGE": -0.2696,
+      "YEARS_EMPLOYED": 0.0198,
+      "CNT_CHILDREN": 0.8739,
+      "CNT_FAM_MEMBERS": 1.0,
+      "ASSET_SCORE": 0.1871,
+      "DIGITAL_SCORE": -0.0142
+    },
+    "ASSET_SCORE": {
+      "AMT_INCOME_TOTAL": 0.1889,
+      "AGE": -0.0137,
+      "YEARS_EMPLOYED": -0.0687,
+      "CNT_CHILDREN": 0.1373,
+      "CNT_FAM_MEMBERS": 0.1871,
+      "ASSET_SCORE": 1.0,
+      "DIGITAL_SCORE": -0.1034
+    },
+    "DIGITAL_SCORE": {
+      "AMT_INCOME_TOTAL": 0.0264,
+      "AGE": -0.0762,
+      "YEARS_EMPLOYED": 0.1215,
+      "CNT_CHILDREN": -0.039,
+      "CNT_FAM_MEMBERS": -0.0142,
+      "ASSET_SCORE": -0.1034,
+      "DIGITAL_SCORE": 1.0
+    }
+  },
+  "experience": {
+    "0-2yr": {
+      "mean": 208736,
+      "count": 778
+    },
+    "2-5yr": {
+      "mean": 200374,
+      "count": 1370
+    },
+    "5-10yr": {
+      "mean": 205826,
+      "count": 1298
+    },
+    "10-20yr": {
+      "mean": 201623,
+      "count": 824
+    },
+    "20+yr": {
+      "mean": 195548,
+      "count": 290
+    }
+  },
+  "age_income_line_M": {
+    "21": 135000,
+    "22": 144000,
+    "23": 184017,
+    "24": 177352,
+    "25": 145000,
+    "26": 198545,
+    "27": 191100,
+    "28": 264815,
+    "29": 221349,
+    "30": 212959,
+    "31": 223457,
+    "32": 257688,
+    "33": 236524,
+    "34": 224754,
+    "35": 346941,
+    "36": 256057,
+    "37": 332478,
+    "38": 215690,
+    "39": 209590,
+    "40": 216642,
+    "41": 221508,
+    "42": 162121,
+    "43": 180642,
+    "44": 286227,
+    "45": 314904,
+    "46": 238663,
+    "47": 252000,
+    "48": 140625,
+    "49": 283714,
+    "50": 347220,
+    "51": 167420,
+    "52": 179079,
+    "53": 315000,
+    "54": 261264,
+    "55": 216000,
+    "56": 176625,
+    "57": 175050,
+    "58": 222136,
+    "59": 231876,
+    "60": 131113,
+    "61": 360000,
+    "62": 176653,
+    "63": 139924,
+    "64": 151309,
+    "66": 81000,
+    "67": 99000
+  },
+  "age_income_line_F": {
+    "20": 112500,
+    "22": 101700,
+    "23": 174913,
+    "24": 81562,
+    "25": 221062,
+    "26": 174879,
+    "27": 145086,
+    "28": 182070,
+    "29": 172711,
+    "30": 156842,
+    "31": 134381,
+    "32": 164306,
+    "33": 171352,
+    "34": 209649,
+    "35": 181069,
+    "36": 162578,
+    "37": 226093,
+    "38": 185425,
+    "39": 205568,
+    "40": 163870,
+    "41": 143793,
+    "42": 236361,
+    "43": 191546,
+    "44": 200100,
+    "45": 208815,
+    "46": 155004,
+    "47": 166950,
+    "48": 216695,
+    "49": 208754,
+    "50": 169071,
+    "51": 243175,
+    "52": 180370,
+    "53": 172200,
+    "54": 197022,
+    "55": 166905,
+    "56": 170280,
+    "57": 207023,
+    "58": 124839,
+    "59": 146866,
+    "60": 173751,
+    "61": 183182,
+    "62": 175643,
+    "63": 239220,
+    "64": 112015,
+    "65": 202800,
+    "66": 77000,
+    "67": 107500,
+    "68": 76500
+  },
+  "occupation_gender": {
+    "Accountants": {
+      "M": 270000,
+      "F": 206258
+    },
+    "Cleaning staff": {
+      "M": 190227,
+      "F": 137959
+    },
+    "Cooking staff": {
+      "M": 148050,
+      "F": 120292
+    },
+    "Core staff": {
+      "M": 224184,
+      "F": 173125
+    },
+    "Drivers": {
+      "M": 204907,
+      "F": 110000
+    },
+    "HR staff": {
+      "F": 213468
+    },
+    "High skill tech staff": {
+      "M": 260062,
+      "F": 181951
+    },
+    "IT staff": {
+      "M": 189843
+    },
+    "Laborers": {
+      "M": 208755,
+      "F": 193416
+    },
+    "Low-skill Laborers": {
+      "M": 186428
+    },
+    "Managers": {
+      "M": 382987,
+      "F": 266818
+    },
+    "Medicine staff": {
+      "M": 405000,
+      "F": 139781
+    },
+    "Private service staff": {
+      "M": 360000,
+      "F": 207424
+    },
+    "Realty agents": {
+      "F": 296156
+    },
+    "Sales staff": {
+      "M": 218120,
+      "F": 164591
+    },
+    "Secretaries": {
+      "M": 315000,
+      "F": 154687
+    },
+    "Security staff": {
+      "M": 193204,
+      "F": 177695
+    },
+    "Waiters/barmen staff": {
+      "F": 152500
+    }
+  }
+}
