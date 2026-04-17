@@ -1,24 +1,23 @@
-// CREDITLENS - GODMODE DASHBOARD LOGIC
-Chart.defaults.color = '#9898b0';
-Chart.defaults.font.family = "'Inter', sans-serif";
+// CREDITLENS - NEWSPAPER EDITION
+Chart.defaults.color = '#2a2a2a';
+Chart.defaults.font.family = "'Crimson Text', 'Georgia', serif";
 
-// Safe plugin registration
 try { Chart.register(ChartDataLabels); } catch(e) {}
 
 const C = {
-    primary: '#6366f1',
-    primaryA: 'rgba(99,102,241,0.25)',
-    male: '#3b82f6',
-    maleA: 'rgba(59,130,246,0.3)',
-    female: '#f43f5e',
-    femaleA: 'rgba(244,63,94,0.3)',
-    cyan: '#22d3ee',
-    cyanA: 'rgba(34,211,238,0.15)',
-    green: '#10b981',
-    greenA: 'rgba(16,185,129,0.25)',
-    amber: '#f59e0b',
-    violet: '#a78bfa',
-    grid: 'rgba(255,255,255,0.05)',
+    primary: '#0a0a0a',
+    primaryA: 'rgba(10,10,10,0.12)',
+    male: '#0a0a0a',
+    maleA: 'rgba(10,10,10,0.7)',
+    female: '#8b0000',
+    femaleA: 'rgba(139,0,0,0.6)',
+    cyan: '#1a1a2e',
+    cyanA: 'rgba(26,26,46,0.12)',
+    green: '#1a3a1a',
+    greenA: 'rgba(26,58,26,0.15)',
+    amber: '#4a3000',
+    violet: '#2a1a4a',
+    grid: 'rgba(0,0,0,0.07)',
 };
 
 const BASE = {
@@ -26,25 +25,25 @@ const BASE = {
     maintainAspectRatio: false,
     plugins: {
         datalabels: { display: false },
-        legend: { labels: { color: '#c8c8d8', usePointStyle: true, font: { size: 12 } } },
+        legend: { labels: { color: '#2a2a2a', usePointStyle: true, font: { size: 12, family: "'Inter',sans-serif" } } },
         tooltip: {
-            backgroundColor: 'rgba(10,10,20,0.92)',
+            backgroundColor: '#0a0a0a',
             titleColor: '#fff',
-            bodyColor: '#c0c0d0',
-            borderColor: 'rgba(99,102,241,0.4)',
+            bodyColor: '#ccc',
+            borderColor: '#8b0000',
             borderWidth: 1,
             padding: 12,
-            cornerRadius: 8,
+            cornerRadius: 0,
         }
     },
     scales: {
         y: {
-            grid: { color: C.grid, drawBorder: false },
-            ticks: { color: '#8888a0', font: { size: 11 } }
+            grid: { color: 'rgba(0,0,0,0.06)', drawBorder: false },
+            ticks: { color: '#5a5a5a', font: { size: 11, family: "'Inter',sans-serif" } }
         },
         x: {
             grid: { display: false },
-            ticks: { color: '#8888a0', font: { size: 11 } }
+            ticks: { color: '#5a5a5a', font: { size: 11, family: "'Inter',sans-serif" } }
         }
     }
 };

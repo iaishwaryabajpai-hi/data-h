@@ -136,7 +136,6 @@ body {
     font-family: var(--font-title);
     letter-spacing: 6px;
     background: #000;
-    -webkit-
     -webkit-text-fill-color: initial;
     
 }
@@ -268,7 +267,7 @@ body {
 
 .nav-link:hover {
     color: var(--text-primary);
-    background: rgba(99,102,241,0.1);
+    background: rgba(0,0,0,0.1);
 }
 
 .nav-link.active {
@@ -407,7 +406,7 @@ body {
 }
 
 .chart-card:hover {
-    border-color: rgba(99,102,241,0.2);
+    border-color: rgba(0,0,0,0.1);
     box-shadow: 0 8px 40px rgba(0,0,0,0.3);
 }
 
@@ -434,7 +433,7 @@ body {
     background: var(--accent-glow);
     color: var(--accent-light);
     border-radius: 20px;
-    border: 1px solid rgba(99,102,241,0.2);
+    border: 2px solid #000;
     letter-spacing: 0.5px;
 }
 
@@ -453,7 +452,7 @@ body {
     font-size: 0.88rem;
     color: var(--text-secondary);
     padding: 1rem;
-    background: rgba(99,102,241,0.05);
+    background: rgba(0,0,0,0.1);
     border-left: 3px solid var(--accent);
     border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
     line-height: 1.6;
@@ -598,7 +597,7 @@ body {
 }
 
 .why-drill {
-    background: rgba(99,102,241,0.05);
+    background: rgba(0,0,0,0.1);
     border-radius: var(--radius-md);
     padding: 1.5rem;
 }
@@ -734,7 +733,7 @@ body {
 
 .pred-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(99,102,241,0.4);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
 }
 
 .pred-result {
@@ -749,8 +748,7 @@ body {
     font-size: 3rem;
     font-weight: 900;
     font-family: var(--font-mono);
-    background: linear-gradient(135deg, var(--cyan), var(--accent-light));
-    -webkit-
+    background: #000, var(--accent-light));
     -webkit-text-fill-color: initial;
     
     margin-bottom: 0.5rem;
@@ -796,7 +794,7 @@ body {
     font-family: var(--font-mono);
     font-size: 2.5rem;
     font-weight: 900;
-    color: rgba(99,102,241,0.15);
+    color: rgba(0,0,0,0.1);
     position: absolute;
     top: 1rem;
     right: 1.2rem;
@@ -901,9 +899,9 @@ body {
 
 /* ===== AI CO-ANALYST ===== */
 .ai-nav {
-    background: linear-gradient(135deg, rgba(99,102,241,0.2), rgba(139,92,246,0.2)) !important;
+    background: #e0e0e0 !important;
     color: var(--accent-light) !important;
-    border: 1px solid rgba(99,102,241,0.3);
+    border: 2px solid #000;
 }
 
 /* Setup bar */
@@ -958,7 +956,7 @@ body {
     transition: all 0.3s;
 }
 .key-save-btn:hover { opacity: 0.85; transform: translateY(-1px); }
-.key-save-btn.connected { background: linear-gradient(135deg, #10b981, #059669); }
+.key-save-btn.connected { background: #000; }
 .ai-key-note { font-size: 0.8rem; color: var(--text-muted); }
 .ai-key-note a { color: var(--accent-light); }
 
@@ -995,7 +993,7 @@ body {
 .persona-btn:hover, .persona-btn.active {
     border-color: var(--accent);
     background: var(--accent-glow);
-    box-shadow: 0 0 20px rgba(99,102,241,0.1);
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
 .persona-icon { font-size: 1.4rem; }
 .persona-name { font-size: 0.8rem; font-weight: 700;
@@ -1041,7 +1039,7 @@ body {
     position: relative;
     overflow: hidden;
 }
-.ai-generate-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(99,102,241,0.4); }
+.ai-generate-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
 .ai-generate-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
 .ai-generate-btn .spinner {
     display: inline-block;
@@ -1075,7 +1073,7 @@ body {
     background: var(--accent-glow);
     color: var(--accent-light);
     border-radius: 20px;
-    border: 1px solid rgba(99,102,241,0.25);
+    border: 2px solid #000;
 }
 .ai-topic-label {
     font-size: 0.8rem;
@@ -1091,7 +1089,7 @@ body {
     position: relative;
     overflow: hidden;
 }
-.ai-response-box.streaming { border-color: rgba(99,102,241,0.35); box-shadow: 0 0 30px rgba(99,102,241,0.08); }
+.ai-response-box.streaming { border-color: rgba(0,0,0,0.1); box-shadow: 0 0 30px rgba(0,0,0,0.1); }
 .ai-placeholder { text-align: center; padding: 3rem 2rem; color: var(--text-muted); }
 .ai-placeholder-icon { font-size: 3rem; margin-bottom: 1rem; }
 .ai-placeholder p { font-size: 0.9rem; line-height: 1.7; }
@@ -1109,7 +1107,7 @@ body {
     border-left: 3px solid var(--accent);
     padding: 0.6rem 1rem;
     margin: 1rem 0;
-    background: rgba(99,102,241,0.05);
+    background: rgba(0,0,0,0.1);
     border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
     color: var(--text-primary);
     font-style: italic;
@@ -1125,7 +1123,7 @@ body {
 .ai-scanning {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, transparent 0%, rgba(99,102,241,0.04) 50%, transparent 100%);
+    background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.1) 50%, transparent 100%);
     animation: scanning 1.5s linear infinite;
     pointer-events: none;
 }
