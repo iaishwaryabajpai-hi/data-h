@@ -16,6 +16,9 @@ Mirrors every analysis shown on the CreditLens dashboard:
 import pandas as pd
 import numpy as np
 from scipy import stats
+import matplotlib.pyplot as plt
+import seaborn as sns
+import os
 
 CSV = '/Users/aishwarya/Downloads/credit_dashboard/application_clean.csv'
 
@@ -39,6 +42,137 @@ def gini(arr):
     n = len(a)
     idx = np.arange(1, n + 1)
     return round((2 * np.sum(idx * a) - (n + 1) * np.sum(a)) / (n * np.sum(a)), 4)
+
+# ── generate charts ───────────────────────────────────────────
+def generate_visualizations(df):
+    print("\n  Generating visualization charts (saving to 'charts/' directory)...")
+    os.makedirs('charts', exist_ok=True)
+    sns.set_theme(style="whitegrid", palette="gray")
+    
+    # Chart 1: Income Distribution (Histogram)
+    plt.figure(figsize=(10, 6))
+    sns.histplot(df['AMT_INCOME_TOTAL'], bins=50, color='black', kde=True)
+    plt.title('Income Distribution')
+    plt.xlim(0, 1000000)
+    plt.savefig('charts/01_income_distribution.png', dpi=300, bbox_inches='tight')
+    plt.close()
+    
+    # Chart 2: Age Distribution
+    plt.figure(figsize=(10, 6))
+    sns.histplot(df['AGE'], bins=30, color='black', kde=True)
+    plt.title('Age Distribution (Bimodal Peaks)')
+    plt.savefig('charts/02_age_distribution.png', dpi=300, bbox_inches='tight')
+    plt.close()
+    
+    # Chart 3: Gender x Age Income Line
+    plt.figure(figsize=(10, 6))
+    df['AGE_INT'] = df['AGE'].astype(int)
+    sns.lineplot(data=df, x='AGE_INT', y='AMT_INCOME_TOTAL', hue='CODE_GENDER', palette=['black', 'gray'], errorbar=None)
+    plt.title('Income Divergence Pattern by Gender & Age')
+    plt.savefig('charts/03_gender_age_income.png', dpi=300, bbox_inches='tight')
+    plt.close()
+    
+    # Chart 4: Gender x Education
+    edu_col = next((c for c in df.columns if 'EDUCATION' in c), None)
+    if edu_col:
+        plt.figure(figsize=(12, 6))
+        sns.barplot(data=df, y=edu_col, x='AMT_INCOME_TOTAL', hue='CODE_GENDER', palette=['black', 'gray'], errorbar=None)
+        plt.title('Gender x Education Income')
+        plt.savefig('charts/04_gender_education.png', dpi=300, bbox_inches='tight')
+        plt.close()
+        
+    # Chart 5: Occupation Income Gender Comparison
+    occ_col = next((c for c in df.columns if 'OCCUPATION' in c), None)
+    if occ_col:
+        plt.figure(figsize=(12, 8))
+        sns.barplot(data=df, y=occ_col, x='AMT_INCOME_TOTAL', hue='CODE_GENDER', palette=['black', 'gray'], errorbar=None,
+                    order=df.groupby(occ_col)['AMT_INCOME_TOTAL'].mean().sort_values(ascending=False).index)
+        plt.title('Occupation Income — Gender Comparison')
+        plt.savefig('charts/05_occupation_gender.png', dpi=300, bbox_inches='tight')
+        plt.close()
+        
+        # Chart 6: Occupation Ranking Mean
+        plt.figure(figsize=(12, 8))
+        sns.barplot(data=df, y=occ_col, x='AMT_INCOME_TOTAL', color='black', errorbar=None,
+                    order=df.groupby(occ_col)['AMT_INCOME_TOTAL'].mean().sort_values(ascending=False).index)
+        plt.title('Occupation Ranking (Mean Income)')
+        plt.savefig('charts/06_occupation_ranking.png', dpi=300, bbox_inches='tight')
+        plt.close()
+        
+    # Chart 7: Education Income Pipeline
+    if edu_col:
+        plt.figure(figsize=(10, 6))
+        sns.barplot(data=df, x=edu_col, y='AMT_INCOME_TOTAL', color='black', errorbar=None,
+                    order=df.groupby(edu_col)['AMT_INCOME_TOTAL'].mean().sort_values(ascending=False).index)
+        plt.title('Education -> Income Pipeline')
+        plt.xticks(rotation=45, ha='right')
+        plt.savefig('charts/07_education_income.png', dpi=300, bbox_inches='tight')
+        plt.close()
+        
+    # Chart 8: Income by Employment Type
+    inc_col = next((c for c in df.columns if 'INCOME_TYPE' in c), None)
+    if inc_col:
+        plt.figure(figsize=(10, 6))
+        sns.barplot(data=df, x=inc_col, y='AMT_INCOME_TOTAL', color='black', errorbar=None,
+                    order=df.groupby(inc_col)['AMT_INCOME_TOTAL'].mean().sort_values(ascending=False).index)
+        plt.title('Income by Employment Type')
+        plt.xticks(rotation=45, ha='right')
+        plt.savefig('charts/08_income_type.png', dpi=300, bbox_inches='tight')
+        plt.close()
+        
+    # Chart 9: Asset Score Ladder
+    plt.figure(figsize=(8, 6))
+    sns.barplot(data=df, x='ASSET_SCORE', y='AMT_INCOME_TOTAL', color='black', errorbar=None)
+    plt.title('Asset Score -> Income Ladder')
+    plt.savefig('charts/09_asset_score.png', dpi=300, bbox_inches='tight')
+    plt.close()
+        
+    # Chart 10: Housing Type Income
+    housing_col = next((c for c in df.columns if 'HOUSING' in c), None)
+    if housing_col:
+        plt.figure(figsize=(10, 6))
+        sns.barplot(data=df, y=housing_col, x='AMT_INCOME_TOTAL', color='black', errorbar=None,
+                    order=df.groupby(housing_col)['AMT_INCOME_TOTAL'].mean().sort_values(ascending=False).index)
+        plt.title('Housing Type -> Income')
+        plt.savefig('charts/10_housing_income.png', dpi=300, bbox_inches='tight')
+        plt.close()
+        
+    # Chart 11: Family Status Distribution
+    fam_col = next((c for c in df.columns if 'FAMILY_STATUS' in c), None)
+    if fam_col:
+        plt.figure(figsize=(8, 8))
+        fam_counts = df[fam_col].value_counts()
+        plt.pie(fam_counts, labels=fam_counts.index, autopct='%1.1f%%', colors=sns.color_palette("gray", len(fam_counts)))
+        plt.title('Family Status Distribution')
+        plt.savefig('charts/11_family_status.png', dpi=300, bbox_inches='tight')
+        plt.close()
+        
+    # Chart 12: Children Count -> Income Impact
+    plt.figure(figsize=(10, 6))
+    sns.lineplot(data=df[df['CNT_CHILDREN'] <= 4], x='CNT_CHILDREN', y='AMT_INCOME_TOTAL', color='black', marker='o')
+    plt.title('Children Count -> Income Impact (The Parenthood Penalty)')
+    plt.xticks([0, 1, 2, 3, 4])
+    plt.savefig('charts/12_children_income.png', dpi=300, bbox_inches='tight')
+    plt.close()
+        
+    # Chart 13: Experience Income
+    if 'EXP_BRACKET' in df.columns:
+        plt.figure(figsize=(10, 6))
+        sns.barplot(data=df[df['YEARS_EMPLOYED'] > 0], x='EXP_BRACKET', y='AMT_INCOME_TOTAL', color='black', errorbar=None)
+        plt.title('Experience -> Income (Non-Pensioners)')
+        plt.savefig('charts/13_experience_income.png', dpi=300, bbox_inches='tight')
+        plt.close()
+        
+    # Chart 14: Correlation Heatmap
+    corr_cols = ['AMT_INCOME_TOTAL','AGE','YEARS_EMPLOYED','CNT_CHILDREN','ASSET_SCORE','DIGITAL_SCORE']
+    corr_cols = [c for c in corr_cols if c in df.columns]
+    plt.figure(figsize=(8, 6))
+    sns.heatmap(df[corr_cols].corr(), annot=True, cmap="gray", fmt=".2f", vmin=-1, vmax=1)
+    plt.title('Correlation Heatmap')
+    plt.savefig('charts/14_correlation_heatmap.png', dpi=300, bbox_inches='tight')
+    plt.close()
+    
+    print("  Done! 14 charts saved to the 'charts/' folder.")
 
 # ── load ──────────────────────────────────────────────────────
 def main():
@@ -339,6 +473,11 @@ def main():
         print(f"  {i:02d}. {title}")
         print(f"      {desc}\n")
 
+    print("═" * 60)
+    
+    # Generate visual charts
+    generate_visualizations(df)
+    
     print("═" * 60)
     print("  Analysis complete. All dashboard insights reproduced.")
     print("═" * 60)
